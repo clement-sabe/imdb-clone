@@ -1,21 +1,26 @@
-const express = require('express')
+
+import express from "express"
 const app = express()
+import fetchPopular from "./fetchMovies.js"
 
-const handlebars = require('express-handlebars')
-
-app.set('view engine', 'handlebars')
-app.engine('handlebars', handlebars({
- layoutsDir: __dirname + '/views/layouts',
-}))
+import handlebars from "express-handlebars"
+var hbs = handlebars.create()
+app.engine("handlebars", hbs.engine)
+app.set('view engine', 'handlebars');
 
  app.use(express.static('public'))
 
 
 app.get('/', function (req, res) {
-    res.render('main', {layout : 'index'})
+   var result= fetchPopular().then(res=>{
+      console.log(res);
+   })
+   console.log(result); 
+   res.render('main', {layout : 'index'})
     
  })
 app.get('/contact', function (req, res) {
+
     res.render('contact', {layout : 'index'})
  })
  app.get('/topRated', function (req, res) {

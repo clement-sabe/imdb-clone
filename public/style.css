@@ -1,7 +1,21 @@
-h1{
-    color:red
+h1 {
+   color: red
+}
+
+li {
+   color: darkred
+}
+
+/****** CAROUSEL ******/
+
+
+
+.container-carousel{
+  
+   height: 10vh;
  }
- 
- li{
-    color:darkred
- }
+
+
+.img1{
+   height: 80vh;
+}

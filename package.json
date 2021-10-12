@@ -9,10 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
-    "boostrap": "^2.0.0",
-=======
->>>>>>> 2503f1a8aa807bb54bea8526bd1453e3caa8e607
     "bootstrap": "^5.1.3",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",

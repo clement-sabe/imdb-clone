@@ -57,3 +57,19 @@
     color:#F1F1F1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
+
+
+
+ /****** CAROUSEL ******/
+
+
+
+.container-carousel{
+  
+   height: 10vh;
+ }
+
+
+.img1{
+   height: 80vh;
+}

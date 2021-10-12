@@ -3,6 +3,10 @@
     padding: 0;
     background-color: #2B2B2B;
  }
+ #main{
+    display: flex;
+    flex-direction: row;
+ }
  /* ---------------- NAV --------------- */
  header{
     display: flex;
@@ -68,13 +72,15 @@
 
 
 .container-carousel{
-  
+  width:70%;
    height: 10vh;
+   margin: 2em;
  }
-
-
 .img1{
    height: 80vh;
+}
+.carousel-info> *{
+color: #F1F1F1;
 }
  /* ------------------upComingRight------------------ */
  #upComing{

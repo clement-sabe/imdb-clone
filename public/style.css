@@ -83,15 +83,13 @@
 color: #F1F1F1;
 }
  /* ------------------upComingRight------------------ */
- #upComing{
+ .upComing{
     margin-top: 2em;
     position: absolute;
-    right: 0;
-    width: 25%;
-    height: 1080px;
+    left: 0;
     overflow-y: scroll;
  }
- #upComing::-webkit-scrollbar {
+ .upComing::-webkit-scrollbar {
    display: none;
  }
  .upComingItem{
@@ -99,7 +97,7 @@ color: #F1F1F1;
     display: flex;
     flex-direction: row;
  }
- #upComing img{
+ .upComing img{
     height: 100;
     width: 50;
  }

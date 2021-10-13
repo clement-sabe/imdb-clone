@@ -1,7 +1,22 @@
 
 import express from "express"
+
+import livereload from "livereload";
+import connectLiveReload from "connect-livereload"
+
+const liveReloadServer = livereload.createServer();
+liveReloadServer.server.once("connection", () => {
+  setTimeout(() => {
+    liveReloadServer.refresh("/");
+  }, 100);
+});
+
 const app = express()
+
+app.use(connectLiveReload());
+
 import fetchPopular from "./fetchMovies.js"
+
 
 import handlebars from "express-handlebars"
 var hbs = handlebars.create()
@@ -11,14 +26,13 @@ app.set('view engine', 'handlebars');
  app.use(express.static('public'))
 
 
-app.get('/', function (req, res) {
-   var result= fetchPopular().then(res=>{
-      console.log(res);
+app.get('/', async function (req, res) {
+   var result= await fetchPopular().then(response=>{
+      return response
    })
-   console.log(result); 
-   res.render('main', {layout : 'index'})
-    
- })
+   // console.log(result);
+   res.render('main', {layout : 'index', data:result})
+})
 app.get('/contact', function (req, res) {
 
     res.render('contact', {layout : 'index'})

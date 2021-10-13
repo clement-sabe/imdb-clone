@@ -1,4 +1,8 @@
 <div id="main">
+{{!-- {{#each data.results}}
+  <p>{{{original_title}}}</p>
+  {{/each}}   --}}
+  <h1>prout</h1>
 {{!-- CAROUSEL --}}
 <div class="container-carousel h-20">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -6,7 +10,8 @@
             <div class="carousel-item active">
                 <div class="carousel-element h-100 row">
                 <div class="carousel-image col-6">
-                    <img src="../assets/img/affamés.jpg" class="img1 d-block w-100 img-responsive " alt="...">
+                    <img src='../assets/img/affamés.jpg'
+                    class="img1 d-block w-100 img-responsive " alt="...">
                 </div>
                 <div class="carousel-info col-3">
                     <h2>LOL</h2>
@@ -51,87 +56,19 @@
 
 {{!-- --------------Upcoming--------------- --}}
 <h3 class="categoryTitle right" >Dernières sorties</h3>
-<div id="upComing">
-   <div class="upComingItem">
-   <img src="../assets/img/frenchDispatch.jpg" alt="">
+<div class="row upComing justify-content-end">
+    <div class="col-5">
+{{#each data.results}}
+<div class="col-12 itemComing">
+   <img src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt="">
    <div class="upComingInfo">
-      <p class="upComingTitle">titre du film</p>
+      <p class="upComingTitle">{{{title}}}</p>
       <ion-icon class='playIcon' name="play"></ion-icon>
       <p >Voir la bande-annonce</p>
    </div>
    </div>
-   <div class="upComingItem">
-   <img src="../assets/img/frenchDispatch.jpg" alt="">
-   <div class="upComingInfo">
-      <p>titre du film</p>
-      <ion-icon id='playIcon' name="play"></ion-icon>
-      <p class="upComingBA">Voir la bande-annonce</p>
+   {{/each}}
    </div>
    </div>
-   <div class="upComingItem">
-   <img src="../assets/img/frenchDispatch.jpg" alt="">
-   <div class="upComingInfo">
-      <p>titre du film</p>
-      <ion-icon id='playIcon' name="play"></ion-icon>
-      <p>Voir la bande-annonce</p>
-   </div>
-   </div>
-   <div class="upComingItem">
-   <img src="../assets/img/frenchDispatch.jpg" alt="">
-   <div class="upComingInfo">
-      <p>titre du film</p>
-      <ion-icon id='playIcon' name="play"></ion-icon>
-      <p>Voir la bande-annonce</p>
-   </div>
-   </div>
-   <div class="upComingItem">
-   <img src="../assets/img/frenchDispatch.jpg" alt="">
-   <div class="upComingInfo">
-      <p>titre du film</p>
-      <ion-icon id='playIcon' name="play"></ion-icon>
-      <p>Voir la bande-annonce</p>
-   </div>
-   </div>
-   <div class="upComingItem">
-   <img src="../assets/img/frenchDispatch.jpg" alt="">
-   <div class="upComingInfo">
-      <p>titre du film</p>
-      <ion-icon id='playIcon' name="play"></ion-icon>
-      <p>Voir la bande-annonce</p>
-   </div>
-   </div>
-   <div class="upComingItem">
-   <img src="../assets/img/frenchDispatch.jpg" alt="">
-   <div class="upComingInfo">
-      <p>titre du film</p>
-      <ion-icon id='playIcon' name="play"></ion-icon>
-      <p>Voir la bande-annonce</p>
-   </div>
-   </div>
-   <div class="upComingItem">
-   <img src="../assets/img/frenchDispatch.jpg" alt="">
-   <div class="upComingInfo">
-      <p>titre du film</p>
-      <ion-icon id='playIcon' name="play"></ion-icon>
-      <p>Voir la bande-annonce</p>
-   </div>
-   </div>
-   <div class="upComingItem">
-   <img src="../assets/img/frenchDispatch.jpg" alt="">
-   <div class="upComingInfo">
-      <p>titre du film</p>
-      <ion-icon id='playIcon' name="play"></ion-icon>
-      <p>Voir la bande-annonce</p>
-   </div>
-   </div>
-   <div class="upComingItem">
-   <img src="../assets/img/frenchDispatch.jpg" alt="">
-   <div class="upComingInfo">
-      <p>titre du film</p>
-      <ion-icon id='playIcon' name="play"></ion-icon>
-      <p>Voir la bande-annonce</p>
-   </div>
-   </div>
-
 </div>
 </div>

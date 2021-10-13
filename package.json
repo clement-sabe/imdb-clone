@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www",
+    "watch": "nodemon --ext *"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +17,11 @@
     "express-handlebars": "^5.3.4",
     "fetch": "^1.1.0",
     "handlebars": "^4.7.7",
-    "node-fetch": "^3.0.0",
+    "node-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.9.3",
     "nodemon": "^2.0.13"
   }
 }

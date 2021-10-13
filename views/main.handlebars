@@ -1,74 +1,94 @@
-<div id="main">
-{{!-- {{#each data.results}}
-  <p>{{{original_title}}}</p>
-  {{/each}}   --}}
-  <h1>prout</h1>
-{{!-- CAROUSEL --}}
-<div class="container-carousel h-20">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="carousel-element h-100 row">
-                <div class="carousel-image col-6">
-                    <img src='../assets/img/affamés.jpg'
-                    class="img1 d-block w-100 img-responsive " alt="...">
-                </div>
-                <div class="carousel-info col-3">
-                    <h2>LOL</h2>
-                </div>
-                </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-element h-100 row">
-                <div class="carousel-image col-6">
-                    <img src="../assets/img/frenchDispatch.jpg" class="img1 d-block w-100 img-responsive " alt="...">
-                </div>
-                <div class="carousel-info col-3">
-                    <h2>LOL</h2>
-                </div>
-                </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-element h-100 row">
-                <div class="carousel-image col-6">
-                    <img src="../assets/img/parrain.jpg" class="img1 d-block w-100 img-responsive " alt="...">
-                </div>
-                <div class="carousel-info col-3">
-                    <h2>LOL</h2>
-                </div>
-                </div>
-                </div>
-                
-                
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
     </div>
 </div>
+<div id="main">
+    {{!-- {{#each data.results}}
+  <p>{{{original_title}}}</p>
+  {{/each}}   --}}
+    {{!-- CAROUSEL --}}
+    <div class="container-carousel h-20">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-element h-100 row">
+                        <div class="carousel-image col-6">
+                            <img src="https://image.tmdb.org/t/p/w500{{{data.firstPopular.poster_path}}}"
+                                class="img1 d-block w-100 img-responsive " alt="...">
+                        </div>
+                        <div class="carousel-info col-3">
+                            <h4>{{{data.firstPopular.title}}}</h4>
+                            <p>{{{data.firstPopular.overview}}}</p>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Launch demo modal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {{#each data.popular}}
+                <div class="carousel-item">
+                    <div class="carousel-element h-100 row">
+                        <div class="carousel-image col-6">
+                            <img src="https://image.tmdb.org/t/p/w500{{{poster_path}}}"
+                                class="img1 d-block w-100 img-responsive " alt="...">
+                        </div>
+                        <div class="carousel-info col-3">
+                            <h4>{{{title}}}</h4>
+                            <p>{{{overview}}}</p>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Launch demo modal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
-{{!-- --------------Upcoming--------------- --}}
-<h3 class="categoryTitle right" >Dernières sorties</h3>
-<div class="row upComing justify-content-end">
-    <div class="col-5">
-{{#each data.results}}
-<div class="col-12 itemComing">
-   <img src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt="">
-   <div class="upComingInfo">
-      <p class="upComingTitle">{{{title}}}</p>
-      <ion-icon class='playIcon' name="play"></ion-icon>
-      <p >Voir la bande-annonce</p>
-   </div>
-   </div>
-   {{/each}}
-   </div>
-   </div>
+    {{!-- --------------Upcoming--------------- --}}
+    <h3 class="categoryTitle right">Dernières sorties</h3>
+    <div class="row upComing justify-content-end">
+        <div class="col-5">
+            {{#each data.upComing.results}}
+            <div class="col-12 itemComing">
+                <img src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt="">
+                <div class="upComingInfo">
+                    <p class="upComingTitle">{{{title}}}</p>
+                    <ion-icon class='playIcon' name="play"></ion-icon>
+                    <p>Voir la bande-annonce</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
 </div>
 </div>

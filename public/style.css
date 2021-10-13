@@ -79,7 +79,7 @@
 .img1{
    height: 80vh;
 }
-.carousel-info> *{
+.carousel-info> p, h4 {
 color: #F1F1F1;
 }
  /* ------------------upComingRight------------------ */

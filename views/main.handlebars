@@ -17,9 +17,6 @@
     </div>
 </div>
 <div id="main">
-   {{!-- {{#each data.results}}
-  <p>{{{original_title}}}</p>
-  {{/each}}   --}}
     {{!-- CAROUSEL --}}
     <div class="container-carousel h-20">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -48,7 +45,7 @@
                             <img src="https://image.tmdb.org/t/p/w500{{{poster_path}}}"
                                 class="img1 d-block w-100 img-responsive " alt="...">
                         </div>
-                        <div class="carousel-info col-3">
+                        <div class="carousel-info col-6">
                             <h4>{{{title}}}</h4>
                             <p>{{{overview}}}</p>
                             <!-- Button trigger modal -->
@@ -79,7 +76,7 @@
 
    <div class="row upComing justify-content-end scrollspyUpComing" data-spy="scroll" data-offset="0">
       <div class="col-11">
-         {{#each data.results}}
+         {{#each data.upComing.results}}
          <div class="col-12 itemComing row">
             <img class="col-6" src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt="">
             <div class="upComingInfo col-6">

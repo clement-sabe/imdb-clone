@@ -9,6 +9,9 @@
     display: flex;
     flex-direction: row;
  }
+ .background-element{
+    background-color: #404040;
+ }
 
  /* ---------------- NAV --------------- */
  header {
@@ -127,6 +130,8 @@ color: #F1F1F1;
 
  .categoryTitle {
     color: #D85F24;
+    margin-bottom: 1em;
+    margin-top: 1em;
  }
 
  .right {
@@ -157,4 +162,17 @@ margin: 5em;
    height: 650px;
    margin-top: 2.5rem;
    overflow-x: scroll;
+}
+.star{
+   color: rgb(255, 196, 0);
+}
+/* -------------genre------------------ */
+
+.genreBlock{
+   position:fixed;
+   right: 0;
+   top: 100px;
+}
+.genres p {
+   color: #F1F1F1;
 }

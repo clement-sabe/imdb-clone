@@ -1,1 +1,28 @@
-<p>ici recommandés</p>
+ <h3 class="categoryTitle ms-3">Films les mieux notés</h3>
+
+   <div class="row col-10">
+      <div class="col-11">
+         {{#each data.topRated.results}}
+         <div class="col-12 itemComing m-2 row">
+            <a href="http://localhost:3000/details/{{{id}}}" class="col-2"><img class="col-12" src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt=""></a>
+            <div class="upComingInfo col-4">
+               <a href="http://localhost:3000/details/{{{id}}}"><p class="upComingTitle col-6">{{{title}}}</p></a>
+               <p class="date">{{{release_date}}}</p>
+               <div class="vote row">
+               <p class="rate col-1">{{{vote_average}}}</p>
+               <ion-icon class='star col-1 p-0 warning pt-1' name="star"></ion-icon>
+               </div>
+               <p class="desc">{{{overview}}}</p>
+            </div>
+         </div>
+         {{/each}}
+      </div>
+   </div>
+   <div class="genreBlock col-2">
+       <h4 class="categoryTitle">Genres</h4>
+   {{#each data.genres.genres}}
+   <div class="genres">
+       <p>{{{name}}}</p>
+   </div>
+   {{/each}}
+   </div>

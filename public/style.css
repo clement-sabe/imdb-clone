@@ -9,6 +9,9 @@
     display: flex;
     flex-direction: row;
  }
+ .background-element{
+    background-color: #404040;
+ }
 
  /* ---------------- NAV --------------- */
  header {
@@ -133,6 +136,8 @@
 
  .categoryTitle {
     color: #D85F24;
+    margin-bottom: 1em;
+    margin-top: 1em;
  }
 
  .right {
@@ -141,94 +146,45 @@
  }
 
  .scrollspyUpComing {
-    position: relative;
-    height: 650px;
-    margin-top: 3.5rem;
-    overflow: auto;
- }
+   position: relative;
+   height: 650px;
+   margin-top: 3.5rem;
+   overflow: auto;
+}
+position: relative;
+height: 650px;
+margin-top: 3.5rem;
+overflow: auto;
+}
 
- /* ------------------TOP-RATED------------------ */
+/* ------------------TOP-RATED------------------ */
+.top-rated-block{
+margin: 5em;
 
- .carousel-team-card {
-    margin-top: 50px;
- }
+}
 
- .carousel-team-card-cell {
-    width: 32%;
-    margin: 0px 20px 20px 0;
-    background: #404040;
-    min-height: 400px;
-    height: auto;
-    border-radius: 10px;
- }
+.card{
+   height: 20em;
+   width: 20em;
+   margin:1.5em;
+} 
 
- .carousel-team-card-cell * {
-    color: #ffffff;
- }
+.scrollspy-top-rated{
+   position: relative;
+   height: 650px;
+   margin-top: 2.5rem;
+   overflow-x: scroll;
+}
+.star{
+   color: rgb(255, 196, 0);
+}
+/* -------------genre------------------ */
 
- .carousel-team-card-cell.doctor {
-    background: red;
- }
-
- .carousel-team-card-cell.cardio {
-    background: red;
- }
-
- .carousel-team-card-cell.physio {
-    background: red;
- }
-
- .carousel-team-card .flickity-prev-next-button.previous {
-    left: -50px;
- }
-
- .carousel-team-card .flickity-prev-next-button.next {
-    right:
-       50px;
- }
-
- .carousel-team-card-cell .carousel-card-team {
-    /* text-align: center; */
-    border-radius: 10px;
- }
-
- .carousel-team-card-cell .card-team-img {
-    /* width: 100%; */
-    padding: 10px;
-    margin: 20px auto 0;
- }
-
- .carousel-team-card-cell .card-team-img img {
-    /* border-radius: 50%; */
-    border: 5px solid white;
-    max-width: 150px;
-    -o-object-fit: cover;
-    /* -o-object-position: center; */
-    object-fit: cover;
-    /* object-position: center; */
-    width: 100%;
-    height: 250px;
- }
-
- .carousel-team-card-cell .card-team-name {
-    margin: 20px 0;
-    text-align: end;
-    padding: 0px 40px 0 40px;
- }
-
- .carousel-team-card-cell .card-team-content p {
-    font-size: 14px;
-    text-align: end;
-    margin-bottom: 0;
- }
-
- .carousel-team-card-cell .card-team-content {
-    margin: 0 40px 30px 40px;
-    border-bottom: 1px solid white;
-    padding-bottom: 30px;
- }
-
- .flickity-prev-next-button {
-  
-   
- }
+.genreBlock{
+   position:fixed;
+   right: 0;
+   top: 100px;
+}
+.genres p {
+   color: #F1F1F1;
+}

@@ -10,7 +10,6 @@ import fetch from "node-fetch"
         console.error(error)
     };
 }
-// export default fetchPopular
 
 export const fetchUpComing= async () => {
     try {
@@ -23,7 +22,6 @@ export const fetchUpComing= async () => {
         console.error(error)
     };
 }
-// export default fetchUpComing
 
  export const fetchTopRated= async () => {
     try {
@@ -36,4 +34,27 @@ export const fetchUpComing= async () => {
         console.error(error)
     };
 }
-// export default fetchTopRAted
+export const fetchGenres= async () => {
+    try {
+        let response = await fetch(
+            'https://api.themoviedb.org/3/genre/movie/list?api_key=c5c9bf47127665afb562db31becd9e75&language=fr-FR',
+          )
+          .then(res => res.json())
+        return response
+    } catch (error){
+        console.error(error)
+    };
+}
+
+export const fetchDetails= async (id) => {
+    try {
+        let response = await fetch(
+            `https://api.themoviedb.org/3/movie/${id}?api_key=c5c9bf47127665afb562db31becd9e75&language=fr-FR`,
+          )
+          .then(res => res.json())
+          console.log(response);
+        return response
+    } catch (error){
+        console.error(error)
+    };
+}

@@ -2,6 +2,9 @@
  body {
     margin: 0;
     padding: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+    height: auto;
     background-color: #2B2B2B;
  }
 
@@ -12,7 +15,12 @@
  .background-element{
     background-color: #404040;
  }
-
+.orange{
+  background-color: #D85F24;
+}
+.btn{
+   border:none;
+}
  /* ---------------- NAV --------------- */
  header {
     display: flex;
@@ -20,7 +28,7 @@
     width: 100%;
     justify-content: space-between;
     background-color: #2B2B2B;
-    padding: 1em;
+    
  }
 
  #logo {

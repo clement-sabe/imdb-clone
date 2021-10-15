@@ -5,7 +5,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="carousel-element row">
-                        <div class="carousel-image col-6">
+                        <div class="carousel-image col-6 h-25">
                             <img src="https://image.tmdb.org/t/p/w500{{{data.firstPopular.poster_path}}}"
                                 class="img1 d-block w-100 img-responsive " alt="...">
                         </div>
@@ -53,8 +53,8 @@
       <div class="col-11">
          {{#each data.upComing.results}}
          <div class="col-12 itemComing row">
-            <a href="http://localhost:3000/details/{{{id}}}" class="col-6 row"><img class="col-6" src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt=""></a>
-            <div class="upComingInfo col-6">
+            <a href="http://localhost:3000/details/{{{id}}}" class="col-6 "><img class="col-6" src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt=""></a>
+            <div class="upComingInfo col-6 col-sm-4">
                <p class="upComingTitle col-6"> {{{title}}}</p>
                <a class="btn btn-primary btn-sm col-8 orange" href="http://localhost:3000/details/{{{id}}}" role="button">Voir la fiche du film</a>
             </div>
@@ -70,7 +70,7 @@
 {{!------------------TOP-RATED------------------}}
  <section class="main-container mt-5" >
       <div class="location" id="home">
-          <h1 class="categoryTitle">Les mieux notés</h1>
+          <h1 class="categoryTitle mt-5">Les mieux notés</h1>
           <div class="box">
               {{#each data.topRated.results}}
             <a href="http://localhost:3000/details/{{{id}}}"><img src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt=""></a>

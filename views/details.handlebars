@@ -1,0 +1,18 @@
+    <div class="row col-8 justify-content-center m-auto background-element">
+ <h3 class="categoryTitle mp-8 col-10">{{{data.title}}}</h3>
+     
+         {{!-- {{#each data}} --}}
+         <div class="m-2 row justify-content-center">
+            <img class="col-4" src="https://image.tmdb.org/t/p/w500{{{data.poster_path}}}" alt="">
+            <div class="upComingInfo col-8">
+               <p class="date">{{{data.release_date}}}</p>
+               <div class="vote row">
+               <p class="rate col-1">{{{data.vote_average}}}</p>
+               </div>
+               <p class="desc">{{{data.overview}}}</p>
+            </div>
+         </div>
+         {{!-- {{/each}} --}}
+  
+   </div>
+  

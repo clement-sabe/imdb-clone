@@ -4,15 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www",
+    "watch": "nodemon --ext *"
   },
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "bootstrap": "^5.1.3",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
+    "fetch": "^1.1.0",
     "handlebars": "^4.7.7",
+    "node-fetch": "^3.0.0",
+    "owl.carousel": "^2.3.4"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.9.3",
     "nodemon": "^2.0.13"
   }
 }

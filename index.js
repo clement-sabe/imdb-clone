@@ -18,7 +18,7 @@ const app = express()
 app.use(connectLiveReload());
 
 import 
-   {fetchPopular, fetchUpComing, fetchTopRated, fetchGenres, fetchDetails}from "./fetchMovies.js"
+   {fetchPopular, fetchUpComing, fetchTopRated, fetchGenres, fetchDetails, fetchSimilar}from "./fetchMovies.js"
 import handlebars from "express-handlebars"
 
 var hbs = handlebars.create()
@@ -75,7 +75,6 @@ app.get('/topRated', async function (req, res) {
       topRated: topRatedResults,
       genres: genresResults
    }
-   console.log(data.topRated);
    res.render('topRated', {
       layout: 'index',
       data: data
@@ -106,14 +105,23 @@ const id = req.params.id
    var details = await fetchDetails(id).then(response => {
       return response
    })
+   var similar = await fetchSimilar(id).then(response => {
+      return response
+   })
+   // console.log(similar.results);
    if (details.videos.results[0]){
    var data ={
       details: details,
-      key: details.videos.results[0].key
+      key: details.videos.results[0].key,
+      similar: similar.results.splice(0,8)
    }
 }
 else{
-   var data={details:details}
+   var data={
+      details:details,
+      similar: similar
+   }
+   
 }
    res.render('details', {
       layout:'index',

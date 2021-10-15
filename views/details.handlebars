@@ -1,24 +1,33 @@
     <div class="row col-8 justify-content-center m-auto background-element h-auto">
- <h3 class="categoryTitle mp-8 col-10">{{{data.details.title}}}</h3>
-     
-         {{!-- {{#each data}} --}}
-         <div class="m-2 row justify-content-center">
-            <img class="col-4" src="https://image.tmdb.org/t/p/w500{{{data.details.poster_path}}}" alt="">
-            <div class="upComingInfo col-8">
-               <p class="date">{{{data.details.release_date}}}</p>
-               <div class="vote row">
-               <p class="rate col-1">{{{data.details.vote_average}}}</p>
-               <ion-icon class='star col-1 p-0 warning pt-1' name="star"></ion-icon>
-               </div>
-               <p class="desc">{{{data.details.overview}}}</p>
-            </div>
-            <div  class="col-auto">
-               {{#if data.key}}
-           <iframe src="https://www.youtube.com/embed/{{{data.key}}}" frameborder="0" width="640px" height="360"></iframe>
-           {{/if}}
-           </div>
-         </div>
-         {{!-- {{/each}} --}}
-  
-   </div>
-  
+       <h3 class="categoryTitle mp-8 col-10">{{{data.details.title}}}</h3>
+       <div class="m-2 row justify-content-center">
+          <img class="col-4" src="https://image.tmdb.org/t/p/w500{{{data.details.poster_path}}}" alt="">
+          <div class="upComingInfo col-8">
+             <h4 class="mt-2">{{{data.details.title}}}</h4>
+             <p class="date">{{{data.details.release_date}}}</p>
+             <div class="vote row">
+                <p class="rate col-1">{{{data.details.vote_average}}}</p>
+                <ion-icon class='star col-1 p-0 warning pt-1' name="star"></ion-icon>
+             </div>
+             <p class="desc">{{{data.details.overview}}}</p>
+          </div>
+          <div class="col-auto">
+             {{#if data.key}}
+             <iframe src="https://www.youtube.com/embed/{{{data.key}}}" frameborder="0" width="640px"
+                height="360"></iframe>
+             {{/if}}
+          </div>
+       </div>
+    </div>
+    <div class="container-fluid mb-2">
+       <div class="location m-4" id="home">
+          <h1 class="categoryTitle">Films similaires</h1>
+          <div class="box">
+             {{#each data.similar}}
+             <a href="http://localhost:3000/details/{{{id}}}"><img
+                   src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt=""></a>
+             {{/each }}
+
+          </div>
+       </div>
+    </div>

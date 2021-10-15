@@ -70,5 +70,17 @@ export const fetchVideos= async (id) => {
         console.error(error)
     };
 }
+export const fetchSimilar= async(id) => {
+    try {
+        let response = await fetch(
+            `https://api.themoviedb.org/3/movie/${id}/similar?api_key=c5c9bf47127665afb562db31becd9e75&language=fr-FR&page=1`,
+          )
+          .then(res => res.json())
+        //   console.log(response);
+        return response
+    } catch (error){
+        console.error(error)
+    };
+}
 
 

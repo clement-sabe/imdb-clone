@@ -87,7 +87,27 @@
     color: #F1F1F1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
-
+/* -----------------------SearchResults------------------- */
+.boxSearch {
+   display: grid;
+   /* grid-gap: 5px; */
+   grid-template-columns: repeat(6, minmax(100px, 1fr));
+ }
+ 
+ .boxSearch a {
+   transition: transform .3s;  
+ }
+ 
+ .boxSearch a:hover {
+   transition: transform .3s;
+   -ms-transform: scale(1.4);
+   -webkit-transform: scale(1.4);  
+   transform: scale(1.4);
+ }
+ 
+ .boxSearch img {
+   border-radius: 2px;
+ }
 
 
  /****** CAROUSEL ******/

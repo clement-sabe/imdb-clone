@@ -1,55 +1,21 @@
-/***** CAROUSEL *****/
-
-const img = document.getElementById('carousel');
-const rightBtn = document.getElementById('right-btn');
-const leftBtn = document.getElementById('left-btn');
-
-// Images are from unsplash
-let pictures = ['https://images.unsplash.com/photo-1537000092872-06bbf7b64f60?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=14d2fe1244b43a1841569da918066fc4&auto=format&fit=crop&w=1050&q=80', 'https://images.unsplash.com/photo-1537005081207-04f90e3ba640?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ffb71f2a2843e802e238c5ff8e4bbb8c&auto=format&fit=crop&w=764&q=80', 'https://images.unsplash.com/photo-1536873602512-8e88cc8398b1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=60a351868d0839e686c8c5a286265f8d&auto=format&fit=crop&w=1050&q=80'];
-
-img.src = pictures[0];
-let position = 0;
-
-const moveRight = () => {
-    if (position >= pictures.length - 1) {
-        position = 0
-        img.src = pictures[position];
-        return;
-    }
-    img.src = pictures[position + 1];
-    position++;
-}
-
-const moveLeft = () => {
-    if (position < 1) {
-        position = pictures.length - 1;
-        img.src = pictures[position];
-        return;
-    }
-    img.src = pictures[position - 1];
-    position--;
-}
-
-rightBtn.addEventListener("click", moveRight);
-leftBtn.addEventListener("click", moveLeft);
-
-// ********** OWL carrousel   
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel();
-});
-$('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
+const search = document.getElementById('search')
+search.addEventListener('keyup', function () {
+    const searchResults = document.getElementById('searchResults')
+    searchResults.innerHTML = ''
+    var input = this.value
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=c5c9bf47127665afb562db31becd9e75&query=${input}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            data.results.map(item => {
+                searchResults.innerHTML += 
+                // `<div>${item.title}</div>`
+                // `<a href="http://localhost:3000/details/${item.id}"><img src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt=""></a>`
+                `<div>
+                  <a href="http://localhost:3000/details/${item.id}"><img src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt=""></a>                 
+                </div>`
+                
+                
+            })
+        })
 })

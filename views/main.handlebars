@@ -22,7 +22,7 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="carousel-element h-100 row">
+                    <div class="carousel-element row">
                         <div class="carousel-image col-6">
                             <img src="https://image.tmdb.org/t/p/w500{{{data.firstPopular.poster_path}}}"
                                 class="img1 d-block w-100 img-responsive " alt="...">
@@ -40,7 +40,7 @@
                 </div>
                 {{#each data.popular}}
                 <div class="carousel-item">
-                    <div class="carousel-element h-100 row">
+                    <div class="carousel-element row">
                         <div class="carousel-image col-6">
                             <img src="https://image.tmdb.org/t/p/w500{{{poster_path}}}"
                                 class="img1 d-block w-100 img-responsive " alt="...">
@@ -71,9 +71,6 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-
-=======
    {{!-- --------------Upcoming--------------- --}}
    <h3 class="categoryTitle right">Dernières sorties</h3>
 
@@ -97,50 +94,19 @@
 </div>
 
 {{!------------------TOP-RATED------------------}}
- <div class="top-rated-block">
-<h3 class="categoryTitle">top-rated</h3>
-
-<div class="owl-carousel"></div>
-<div class="top-rated d-flex scrollspy-top-rated">
-   <div class="item card">
-      <div class="card-body">
-         <p class="card-text">This image is in the middle</p>
+ <section class="main-container mt-5" >
+      <div class="location" id="home">
+          <h1 class="categoryTitle">Les mieux notés</h1>
+          <div class="box">
+              {{#each data.topRated.results}}
+            <a href="http://localhost:3000/details/{{{id}}}"><img src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt=""></a>
+            {{/each }}
+           
+          </div>
       </div>
-      <img src="/assets/img/affamés.jpg" alt="Card image">
-      <div class="card-body">
-         <p class="card-text">of a card.</p>
-      </div>
-   </div>
-   <div class="items card">
-      <div class="card-body">
-         <p class="card-text">This image is in the middle</p>
-      </div>
-      <img src="/images/pathToYourImage.png" alt="Card image">
-      <div class="card-body">
-         <p class="card-text">of a card.</p>
-      </div>
-   </div>
-   <div class="items card">
-      <div class="card-body">
-         <p class="card-text">This image is in the middle</p>
-      </div>
-      <img src="/images/pathToYourImage.png" alt="Card image">
-      <div class="card-body">
-         <p class="card-text">of a card.</p>
-      </div>
-   </div>
-   <div class="items card">
-      <div class="card-body">
-         <p class="card-text">This image is in the middle</p>
-      </div>
-      <img src="/images/pathToYourImage.png" alt="Card image">
-      <div class="card-body">
-         <p class="card-text">of a card.</p>
-      </div>
-   </div>
-   
+       
+    <!-- END OF MAIN CONTAINER -->
 
     
 
     
->>>>>>> main

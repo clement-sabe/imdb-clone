@@ -151,35 +151,216 @@
    margin-top: 3.5rem;
    overflow: auto;
 }
-position: relative;
-height: 650px;
-margin-top: 3.5rem;
-overflow: auto;
-}
+
 
 /* ------------------TOP-RATED------------------ */
-.top-rated-block{
-margin: 5em;
+/* CSS VARIABLES */
+:root {
+   --primary: #141414;
+   --light: #F3F3F3;
+   --dark: 	#686868;
+ }
 
-}
+ 
+ img {
+   max-width: 100%;
+ }
+ 
+ h1 {
+   padding-top: 60px;  
+ }
+ 
+ .wrapper {
+   margin: 0;
+   padding: 0;
+ }
+ 
+ /*  */
+ 
+ 
+ /* MAIN CONTIANER */
+ .main-container {
+   padding: 50px;
+ }
+ 
+ .box {
+   display: grid;
+   grid-gap: 10px;
+   grid-template-columns: repeat(8, minmax(100px, 1fr));
+ }
+ 
+ .box a {
+   transition: transform .3s;  
+ }
+ 
+ .box a:hover {
+   transition: transform .3s;
+   -ms-transform: scale(1.4);
+   -webkit-transform: scale(1.4);  
+   transform: scale(1.4);
+ }
+ 
+ .box img {
+   border-radius: 2px;
+ }
+ 
+ /* LINKS */
+ .link {
+   padding: 50px;
+ }
+ 
+ .sub-links ul {
+   list-style: none;
+   padding: 0;
+   display: grid;
+   grid-gap: 20px;
+   grid-template-columns: repeat(4, 1fr);
+ }
+ 
+ .sub-links a {
+   color: var(--dark);
+   text-decoration: none;
+ }
+ 
+ .sub-links a:hover {
+   color: var(--dark);
+   text-decoration: underline;
+ }
+ 
+ .logos a{
+   padding: 10px;
+ }
+ 
+ .logo {
+   color: var(--dark);
+ }
+ 
+ 
+ /* FOOTER */
+ footer {
+   padding: 20px;
+   text-align: center;
+   color: var(--dark);
+   margin: 10px;
+ }
+ 
+ /* MEDIA QUERIES */
+ 
+ @media(max-width: 900px) {
+ 
+   header {
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-areas: 
+     "nt nt nt  .  .  . sb . . . "
+     "mn mn mn mn mn mn  mn mn mn mn";
+   }
+ 
+   .box {
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns: repeat(4, minmax(100px, 1fr));
+   }
+ 
+ }
+ 
+ @media(max-width: 700px) {
 
-.card{
-   height: 20em;
-   width: 20em;
-   margin:1.5em;
-} 
+ 
+   .box {
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns: repeat(3, minmax(100px, 1fr));
+   }
+ 
+   .sub-links ul {
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns: repeat(3, 1fr);
+   }
+    
+ }
+ 
+ @media(max-width: 500px) {
+ 
+   .wrapper {
+     font-size: 15px;
+   }
+ 
+   header {
+     margin: 0;
+     padding: 20px 0 0 0;
+     position: static;
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns: repeat(1, 1fr);
+     grid-template-areas: 
+     "nt"    
+     "mn"
+     "sb";
+     text-align: center;
+   }
+ 
+   .netflixLogo {
+     max-width: 100%;
+     margin: auto;
+     padding-right: 20px;
+   }
+ 
+   .main-nav {
+     display: grid;
+     grid-gap: 0px;
+     grid-template-columns: repeat(1, 1fr);
+     text-align: center;
+   }
+ 
+   h1 {
+     text-align: center;
+     font-size: 18px;
+   }
+ 
+  
+ 
+   .box {
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns: repeat(1, 1fr);
+     text-align: center;    
+   }
+ 
+   .box a:hover {
+     transition: transform .3s;
+     -ms-transform: scale(1);
+     -webkit-transform: scale(1);  
+     transform: scale(1.2);
+   }
+ 
+   .logos {
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns: repeat(2, 1fr);
+     text-align: center;
+   }
+ 
+   .sub-links ul {
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns: repeat(1, 1fr);
+     text-align: center;
+     font-size: 15px;
+   }
+ 
+   
+ 
+   
+    
+ }
+/* -------------genre------------------ */
 
-.scrollspy-top-rated{
-   position: relative;
-   height: 650px;
-   margin-top: 2.5rem;
-   overflow-x: scroll;
-}
 .star{
    color: rgb(255, 196, 0);
 }
-/* -------------genre------------------ */
-
 .genreBlock{
    position:fixed;
    right: 0;
@@ -188,3 +369,45 @@ margin: 5em;
 .genres p {
    color: #F1F1F1;
 }
+
+/* ***** CONTACT ***** */
+
+@media (min-width:768px) {
+   .portfolio-block {
+     padding-bottom: 100px;
+     padding-top: 100px;
+   }
+ }
+ 
+ .portfolio-block {
+   padding-bottom: 60px;
+   padding-top: 60px;
+ }
+ 
+ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+   display: block;
+ }
+ 
+.container-contact{
+ 
+      width: 50%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      color:#D85F24; 
+    }
+    
+    
+    .form-group {
+      margin-bottom: 2rem;
+    }
+.btn-form{
+   color: white;
+   background-color:#D85F24;
+   margin: 1em; 
+}
+    
+    
+ 
+  

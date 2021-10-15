@@ -2,7 +2,7 @@ import fetch from "node-fetch"
  export const fetchPopular= async () => {
     try {
         let response = await fetch(
-            'https://api.themoviedb.org/3/movie/popular?api_key=c5c9bf47127665afb562db31becd9e75&language=fr-FR&page=1',
+            'https://api.themoviedb.org/3/movie/popular?api_key=c5c9bf47127665afb562db31becd9e75&language=fr-FR&page=1&append_to_response=videos',
           )
           .then(res => res.json())
         return response
@@ -49,12 +49,26 @@ export const fetchGenres= async () => {
 export const fetchDetails= async (id) => {
     try {
         let response = await fetch(
-            `https://api.themoviedb.org/3/movie/${id}?api_key=c5c9bf47127665afb562db31becd9e75&language=fr-FR`,
+            `https://api.themoviedb.org/3/movie/${id}?api_key=c5c9bf47127665afb562db31becd9e75&language=fr-FR&append_to_response=videos`,
           )
           .then(res => res.json())
-          console.log(response);
+        //   console.log(response);
         return response
     } catch (error){
         console.error(error)
     };
 }
+export const fetchVideos= async (id) => {
+    try {
+        let response = await fetch(
+            `https://api.themoviedb.org/3/movie/${id}/videos?api_key=c5c9bf47127665afb562db31becd9e75&language=fr-FR`,
+          )
+          .then(res => res.json())
+        //   console.log(response);
+        return response
+    } catch (error){
+        console.error(error)
+    };
+}
+
+

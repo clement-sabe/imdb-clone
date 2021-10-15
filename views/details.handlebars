@@ -1,16 +1,22 @@
-    <div class="row col-8 justify-content-center m-auto background-element">
- <h3 class="categoryTitle mp-8 col-10">{{{data.title}}}</h3>
+    <div class="row col-8 justify-content-center m-auto background-element h-auto">
+ <h3 class="categoryTitle mp-8 col-10">{{{data.details.title}}}</h3>
      
          {{!-- {{#each data}} --}}
          <div class="m-2 row justify-content-center">
-            <img class="col-4" src="https://image.tmdb.org/t/p/w500{{{data.poster_path}}}" alt="">
+            <img class="col-4" src="https://image.tmdb.org/t/p/w500{{{data.details.poster_path}}}" alt="">
             <div class="upComingInfo col-8">
-               <p class="date">{{{data.release_date}}}</p>
+               <p class="date">{{{data.details.release_date}}}</p>
                <div class="vote row">
-               <p class="rate col-1">{{{data.vote_average}}}</p>
+               <p class="rate col-1">{{{data.details.vote_average}}}</p>
+               <ion-icon class='star col-1 p-0 warning pt-1' name="star"></ion-icon>
                </div>
-               <p class="desc">{{{data.overview}}}</p>
+               <p class="desc">{{{data.details.overview}}}</p>
             </div>
+            <div  class="col-auto">
+               {{#if data.key}}
+           <iframe src="https://www.youtube.com/embed/{{{data.key}}}" frameborder="0" width="640px" height="360"></iframe>
+           {{/if}}
+           </div>
          </div>
          {{!-- {{/each}} --}}
   

@@ -1,21 +1,3 @@
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 <div id="main">
     {{!-- CAROUSEL --}}
     <div class="container-carousel h-20">
@@ -27,14 +9,11 @@
                             <img src="https://image.tmdb.org/t/p/w500{{{data.firstPopular.poster_path}}}"
                                 class="img1 d-block w-100 img-responsive " alt="...">
                         </div>
-                        <div class="carousel-info col-3">
+                        <div class="carousel-info col-5">
                             <h4>{{{data.firstPopular.title}}}</h4>
                             <p>{{{data.firstPopular.overview}}}</p>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                                Launch demo modal
-                            </button>
+                            <a class="btn btn-primary" href="http://localhost:3000/details/{{{data.firstPopular.id}}}" role="button">Voir la fiche du film</a>
                         </div>
                     </div>
                 </div>
@@ -45,14 +24,10 @@
                             <img src="https://image.tmdb.org/t/p/w500{{{poster_path}}}"
                                 class="img1 d-block w-100 img-responsive " alt="...">
                         </div>
-                        <div class="carousel-info col-6">
+                        <div class="carousel-info col-5">
                             <h4>{{{title}}}</h4>
                             <p>{{{overview}}}</p>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                                Launch demo modal
-                            </button>
+                            <a class="btn btn-primary" href="http://localhost:3000/details/{{{id}}}" role="button">Voir la fiche du film</a>
                         </div>
                     </div>
                 </div>
@@ -78,11 +53,10 @@
       <div class="col-11">
          {{#each data.upComing.results}}
          <div class="col-12 itemComing row">
-            <img class="col-6" src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt="">
+            <a href="http://localhost:3000/details/{{{id}}}" class="col-6 row"><img class="col-6" src="https://image.tmdb.org/t/p/w500{{{poster_path}}}" alt=""></a>
             <div class="upComingInfo col-6">
                <p class="upComingTitle col-6"> {{{title}}}</p>
-               <ion-icon class='playIcon' name="play"></ion-icon>
-               <p>Voir la bande-annonce</p>
+               <a class="btn btn-primary btn-sm col-8 orange" href="http://localhost:3000/details/{{{id}}}" role="button">Voir la fiche du film</a>
             </div>
          </div>
          {{/each}}

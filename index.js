@@ -17,23 +17,10 @@ const app = express()
 
 app.use(connectLiveReload());
 
-import {
-   fetchPopular
-} from "./fetchMovies.js"
-import {
-   fetchUpComing
-} from "./fetchMovies.js"
-import {
-   fetchTopRated
-} from "./fetchMovies.js"
-import {
-   fetchGenres
-} from "./fetchMovies.js";
-import {
-   fetchDetails
-} from "./fetchMovies.js";
-
+import 
+   {fetchPopular, fetchUpComing, fetchTopRated, fetchGenres, fetchDetails}from "./fetchMovies.js"
 import handlebars from "express-handlebars"
+
 var hbs = handlebars.create()
 app.engine("handlebars", hbs.engine)
 app.set('view engine', 'handlebars');
@@ -45,6 +32,15 @@ app.get('/', async function (req, res) {
    var result = await fetchPopular().then(response => {
       return response
    })
+   
+   // // result.results.map( async item=>{
+   // //    const id=item.id
+   // //    await fetchVideos(id).then(response =>{
+   // //      response.id
+   // //    })
+
+   // })
+  
    var topRatedResults = await fetchTopRated().then(response => {
       return response
    })
@@ -55,7 +51,7 @@ app.get('/', async function (req, res) {
       firstPopular: result.results[0],
       popular: result.results.splice(1),
       topRated: topRatedResults,
-      upComing: upComingResults
+      upComing: upComingResults,
    }
    res.render('main', {
       layout: 'index',
@@ -79,6 +75,7 @@ app.get('/topRated', async function (req, res) {
       topRated: topRatedResults,
       genres: genresResults
    }
+   console.log(data.topRated);
    res.render('topRated', {
       layout: 'index',
       data: data
@@ -109,12 +106,20 @@ const id = req.params.id
    var details = await fetchDetails(id).then(response => {
       return response
    })
+   if (details.videos.results[0]){
+   var data ={
+      details: details,
+      key: details.videos.results[0].key
+   }
+}
+else{
+   var data={details:details}
+}
    res.render('details', {
       layout:'index',
-      data: details
+      data: data,
    })
-})
-
+});
 
 app.listen(3000, function () {
    console.log('Votre app est disponible sur localhost:3000 !')
